@@ -19,7 +19,7 @@ void setup() {
   endCamera();
 
 
-  for (int i=0; i<5; i++) {
+  for (int i=0; i<5; i++) {  //для создания  платформ
     p.add(new platforms(random(width), 450+i*280, int(random(100, 255))));
   }
 }
@@ -60,9 +60,9 @@ void draw() {
   y += vy;
 
   if (mousePressed) {
-    if (mouseX>x+15&&vx<15) vx += (mouseX-x)/20;
-    if (mouseX<x-15&&vx>-15) vx -= (x-mouseX)/20;
-    if (mouseX>x-15&&mouseX<x+15) vx -= (vx)/5;
+    if (mouseX>x+15&&vx<15) vx += (mouseX-x)/20; //мышь справа
+    if (mouseX<x-15&&vx>-15) vx -= (x-mouseX)/20; //мышь справа
+    if (mouseX>x-15&&mouseX<x+15) vx -= (vx)/5; //шар сверхуу,снизу, под пальцем(скорость уменьшается)
   }
   if (keyPressed&&key=='я') {
     y = height/2;
